@@ -1,14 +1,53 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  
+  <ion-slides pager="true">
+
+    <ion-slide *ngFor="let slide of slides" text-center>
+      
+      <div class="slide-img-padding">
+        <img [src]="slide.img" class="slide-img">
+      </div>
+      <div>
+        <h3 [innerHTML]="slide.titulo"></h3>
+      </div>
+      
+
+    </ion-slide>
+
+  </ion-slides>
+
+
 </ion-content>
+
+<ion-footer no-border text-center>
+  
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="10" offset="1">
+
+        <ion-button color="primary"
+                    expand="full"
+                    shape="round"
+                    class="btn-primary"
+                    mode="ios">
+          GET MY PLAN
+        </ion-button>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6" offset="3">
+
+        <ion-button expand="full" fill="clear">
+          <ion-label color="dark">Sign In</ion-label>
+        </ion-button>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  
+
+</ion-footer>
